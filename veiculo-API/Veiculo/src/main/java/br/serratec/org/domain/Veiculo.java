@@ -1,0 +1,35 @@
+package br.serratec.org.domain;
+
+public class Veiculo {
+	private Long placa;
+	private String marca;
+	private String modelo;
+	
+	public Veiculo(Long placa, String marca, String modelo) {
+		super();
+		this.placa = placa;
+		this.marca = marca;
+		this.modelo = modelo;
+	}
+	
+	public Veiculo(){}
+	
+	public Long getPlaca() {
+		return placa;
+	}
+	public void setPlaca(Long placa) {
+		this.placa= placa;
+	}
+	public String getMarca() {
+		return marca;
+	}
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+	public String getModelo() {
+		return modelo;
+	}
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+	}

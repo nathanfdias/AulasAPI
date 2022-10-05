@@ -1,0 +1,5 @@
+package br.serratec.org.model;
+
+public class Veiculo {
+
+}

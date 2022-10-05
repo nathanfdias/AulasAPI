@@ -1,0 +1,5 @@
+package com.algaworks.crm.model;
+
+public class Cliente {
+
+}

@@ -1,0 +1,8 @@
+package br.org.serratec.olamundo.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class OlaMundo {
+
+}
