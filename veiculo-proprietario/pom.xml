@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.org.serratec</groupId>
-	<artifactId>VeiculoProp</artifactId>
+	<artifactId>aula-06-h2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>VeiculoProp</name>
-	<description>Relacao Veiculo Proprietario Manutencao</description>
+	<name>aula-06-h2</name>
+	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
