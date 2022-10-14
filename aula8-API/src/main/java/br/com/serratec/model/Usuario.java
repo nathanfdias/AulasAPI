@@ -1,10 +1,16 @@
 package br.com.serratec.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Usuario {
@@ -15,6 +21,9 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
+
+    @OneToMany(mappedBy = "id.usuario", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<UsuarioPerfil> usuarioPerfis = new HashSet<>();
     
     public Usuario(Long id, String nome, String email, String senha) {
         this.id = id;
@@ -25,6 +34,14 @@ public class Usuario {
 
     public Usuario() {
         super();
+    }
+
+    public Set<UsuarioPerfil> getUsuarioPerfis() {
+        return usuarioPerfis;
+    }
+
+    public void setUsuarioPerfis(Set<UsuarioPerfil> usuarioPerfis) {
+        this.usuarioPerfis = usuarioPerfis;
     }
 
     public Long getId() {
