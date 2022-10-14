@@ -12,4 +12,9 @@ public class ControllerExceptionHandler extends ResponseEntityExceptionHandler{
     public ResponseEntity<Object> handleEmailException(EmailException ex){
         return ResponseEntity.unprocessableEntity().body(ex.getMessage());
     }
+
+    @ExceptionHandler(SenhaException.class)
+    protected ResponseEntity<Object> handleEmailExceptoin(SenhaException ex) {
+        return ResponseEntity.unprocessableEntity().body(ex.getMessage());
+    }
 }

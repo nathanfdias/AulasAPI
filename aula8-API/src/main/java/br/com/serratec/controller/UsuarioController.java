@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.com.serratec.dto.UsuarioDTO;
-import br.com.serratec.model.Usuario;
+import br.com.serratec.dto.UsuarioInserirDTO;
 
 @RestController
 @RequestMapping("/usuarios")
@@ -26,13 +26,13 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity<Usuario> inserir(@RequestBody Usuario usuario) {
-        usuario = usuarioService.inserir(usuario);
+    public ResponseEntity<UsuarioDTO> inserir(@RequestBody UsuarioInserirDTO usuario) {
+        UsuarioDTO usuarioDTO = usuarioService.inserir(usuario);
         URI uri = ServletUriComponentsBuilder
-        .fromCurrentRequest()
-        .path("/{id}")
-        .buildAndExpand(usuario.getId())
-        .toUri();
-        return ResponseEntity.created(uri).body(usuario);
+            .fromCurrentRequest()
+            .path("/{id}")
+            .buildAndExpand(usuarioDTO.getId())
+            .toUri();
+        return ResponseEntity.created(uri).body(usuarioDTO);
     }
 }
